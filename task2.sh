@@ -1,17 +1,20 @@
-read -p 'input the intial natural number : ' iNN
-read -p 'input how many products you want to see: ' numProd #num of iterations
-read -p 'input "x" as a postive int to find out if it is a factor of product ' fac
-remember=0
+read -p 'Enter the intial number: ' startNum
+read -p 'How many products do you want to print?: ' numProd #num of iterations
+read -p 'Enter a number to check if it is a factor of the products: ' factor
+echo
+
 prod=0
 
+echo "The products are: " 
+echo
 for (( i = 1; i <= $numProd; i++ )) ; do
-    echo " test run $i"
-    prod=$((iNN*(iNN + 1)))
-    echo "product: $prod" 
-    ((iNN++))
-    if (( $prod % fac == 0 )); then
-        echo "$prod is a factor of $fac"
+    
+    prod=$((startNum*(startNum + 1)))
+    ((startNum++))
+    
+    if (( $prod % factor == 0 )); then
+        echo "$prod: is a factor of $factor"
     else
-        echo "$prod not a factor of $fac"
+        echo "$prod: not a factor of $factor"
     fi
 done
